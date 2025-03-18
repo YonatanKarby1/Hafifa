@@ -7,7 +7,6 @@ class WavProcessor(yk_APIProcessor):
         super().__init__()
 
     def add_route(self, app: FastAPI):
-        
         @app.post("/compute_avg_power")
         def compute_avg_power():
             print("Here")
