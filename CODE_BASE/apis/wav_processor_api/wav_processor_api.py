@@ -1,9 +1,9 @@
 from fastapi import FastAPI, Request
-from ..yk_apiprocessor import yk_APIProcessor
-from CODE_BASE.yk_processors import ProcessorBase
+from ..api_processor import APIProcessor
+from CODE_BASE.processors import ProcessorBase
 
 
-class WavProcessor(yk_APIProcessor):
+class WavProcessor(APIProcessor):
 
     def __init__(self, processor: ProcessorBase):
         super().__init__()

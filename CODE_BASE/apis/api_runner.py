@@ -1,18 +1,18 @@
 import uvicorn
 from typing import List
 from fastapi import FastAPI
-from .yk_apiprocessor import yk_APIProcessor
+from .api_processor import APIProcessor
 
-class yk_APIRunner:
+class APIRunner:
 
-    _app_processors: List[yk_APIProcessor] = []
+    _app_processors: List[APIProcessor] = []
 
     def __init__(self, port: int, hostname: str):
         self._app = FastAPI()
         self._port = port
         self._hostname = hostname
 
-    def add_api_processor(self, processors: List[yk_APIProcessor]):
+    def add_api_processor(self, processors: List[APIProcessor]):
         for processor in processors:
             processor.add_route(self._app)
         self._app_processors.extend(processors)
